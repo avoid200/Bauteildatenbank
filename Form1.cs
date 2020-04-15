@@ -17,7 +17,7 @@ namespace Bauteildatenbank
 {
 	public partial class mainForm : System.Windows.Forms.Form
 	{
-		private bool debugging = true;                                                 // ist die DebugAnzeige an oder aus?
+		private bool debugging = false;                                                 // ist die DebugAnzeige an oder aus?
 		private bool moving = false;                                                   // ob Form bewegt werden darf.
 		private Point startLocation;                                                   // startpunkt der form bewegung.
 		private Control startpb;                                                       // controll für form postition bei bewegung.
@@ -421,25 +421,27 @@ namespace Bauteildatenbank
 			DataRow myRow;
 			if (mainsender.Name == "dataGridView1")
 			{
-				FormAddEditDialog dialog = new FormAddEditDialog();
-				DialogResult result = dialog.ShowDialog();
-				if (result == DialogResult.OK)
+				FormAddEditDialog addEditdialog = new FormAddEditDialog();
+				addEditdialog.DataSetBuffer = this.dataSet1;
+				addEditdialog.fillFromDataSet();
+				DialogResult dRresult = addEditdialog.ShowDialog();
+				if (dRresult == DialogResult.OK)
 				{
-					myRow = dataSet1.Tables[bs.DataMember].NewRow();
-					myRow["Column_Bauteilname"] = dialog.BauteilName;
-					myRow["Column_Bauteilbeschreibung"] = dialog.Beschreibung;
-					myRow["Column_Bauteilstückzahl"] = Convert.ToInt32(dialog.Stückzahl);
-					myRow["Column_Bauteilbauform"] = Convert.ToInt32(dialog.BauformDs);
-					myRow["Column_Bauteilhersteller"] = Convert.ToInt32(dialog.HerstellerDs);
-					myRow["Column_Bauteildatenblatt"] = dialog.Datenblatt;
-					myRow["Column_BauteilLieferant"] = Convert.ToInt32(dialog.LieferantDs);
-					myRow["Column_Bauteilpreis"] = dialog.Preis;
-					myRow["Column_Bestellnummer"] = dialog.Bestellnummer;
-					myRow["Column_Pinbelegung"] = dialog.Pinbelegung;
-					//myRow["Grafik"] = new ImageConverter().ConvertTo(Properties.Resources.pen, typeof(byte[])); (kommt noch)
-					//myRow["Letzte Änderung"] = DateTime.Now; (kommt noch)
-					dataSet1.Tables[bs.DataMember].Rows.Add(myRow);
-					xml_dataset_Save();
+				//	myRow = dataSet1.Tables[bs.DataMember].NewRow();
+				//	myRow["Column_Bauteilname"] = dialog.BauteilName;
+				//	myRow["Column_Bauteilbeschreibung"] = dialog.Beschreibung;
+				//	myRow["Column_Bauteilstückzahl"] = Convert.ToInt32(dialog.Stückzahl);
+				//	myRow["Column_Bauteilbauform"] = Convert.ToInt32(dialog.BauformDs);
+				//	myRow["Column_Bauteilhersteller"] = Convert.ToInt32(dialog.HerstellerDs);
+				//	myRow["Column_Bauteildatenblatt"] = dialog.Datenblatt;
+				//	myRow["Column_BauteilLieferant"] = Convert.ToInt32(dialog.LieferantDs);
+				//	myRow["Column_Bauteilpreis"] = dialog.Preis;
+				//	myRow["Column_Bestellnummer"] = dialog.Bestellnummer;
+				//	myRow["Column_Pinbelegung"] = dialog.Pinbelegung;
+				//	//myRow["Grafik"] = new ImageConverter().ConvertTo(Properties.Resources.pen, typeof(byte[])); (kommt noch)
+				//	//myRow["Letzte Änderung"] = DateTime.Now; (kommt noch)
+				//	dataSet1.Tables[bs.DataMember].Rows.Add(myRow);
+				//	xml_dataset_Save();
 					statusstrip_update_Status("Datensatz der Datenbank hinzugefügt ...");
 				}
 				else

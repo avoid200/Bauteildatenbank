@@ -28,6 +28,7 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			this.components = new System.ComponentModel.Container();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAddEditDialog));
 			this.label_debug = new System.Windows.Forms.Label();
 			this.button_Abbrechen = new System.Windows.Forms.Button();
@@ -49,7 +50,15 @@
 			this.button_pinbelegungdurchsuchen = new System.Windows.Forms.Button();
 			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.label1 = new System.Windows.Forms.Label();
+			this.bauteileBindingSource = new System.Windows.Forms.BindingSource(this.components);
+			this.herstellerbindingSource = new System.Windows.Forms.BindingSource(this.components);
+			this.lieferantbindingSource = new System.Windows.Forms.BindingSource(this.components);
+			this.bauformbindingSource = new System.Windows.Forms.BindingSource(this.components);
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.bauteileBindingSource)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.herstellerbindingSource)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.lieferantbindingSource)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.bauformbindingSource)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// label_debug
@@ -249,6 +258,10 @@
 			this.Name = "FormAddEditDialog";
 			this.Text = "Form2";
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.bauteileBindingSource)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.herstellerbindingSource)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.lieferantbindingSource)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.bauformbindingSource)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -276,5 +289,9 @@
 		private System.Windows.Forms.Button button_pinbelegungdurchsuchen;
 		private System.Windows.Forms.PictureBox pictureBox1;
 		private System.Windows.Forms.Label label1;
+		private System.Windows.Forms.BindingSource bauteileBindingSource;
+		public System.Windows.Forms.BindingSource herstellerbindingSource;
+		public System.Windows.Forms.BindingSource lieferantbindingSource;
+		public System.Windows.Forms.BindingSource bauformbindingSource;
 	}
 }

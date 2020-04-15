@@ -63,17 +63,6 @@
 			this.lieferantbindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.bauformbindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.dataGridView1 = new System.Windows.Forms.DataGridView();
-			this.columnBauteilnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.columnBauteilbeschreibungDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.columnBauteilbauformDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
-			this.columnPinbelegungDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.columnBauteilherstellerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
-			this.columnBauteildatenblattDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.columnBauteilLieferantDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
-			this.columnBestellnummerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.columnBauteilstückzahlDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.columnBauteilpreisDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.columnIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.dataGridView4 = new System.Windows.Forms.DataGridView();
 			this.columnBauformDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.columnBauformidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -88,6 +77,17 @@
 			this.label_titel = new System.Windows.Forms.Label();
 			this.button_add = new System.Windows.Forms.Button();
 			this.button_search = new System.Windows.Forms.Button();
+			this.columnBauteilnameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.columnBauteilbeschreibungDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.columnBauteilbauformDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+			this.columnPinbelegungDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.columnBauteilherstellerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+			this.columnBauteildatenblattDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.columnBauteilLieferantDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewComboBoxColumn();
+			this.columnBestellnummerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.columnBauteilstückzahlDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.columnBauteilpreisDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.columnIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.dataTable_bauteile)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.dataTable_hersteller)).BeginInit();
@@ -180,11 +180,13 @@
 			// 
 			this.dataColumn_Bauteilbauform.Caption = "Bauform";
 			this.dataColumn_Bauteilbauform.ColumnName = "Column_Bauteilbauform";
+			this.dataColumn_Bauteilbauform.DataType = typeof(int);
 			// 
 			// dataColumn_Bauteilhersteller
 			// 
 			this.dataColumn_Bauteilhersteller.Caption = "Hersteller";
 			this.dataColumn_Bauteilhersteller.ColumnName = "Column_Bauteilhersteller";
+			this.dataColumn_Bauteilhersteller.DataType = typeof(int);
 			// 
 			// dataColumn_Id
 			// 
@@ -203,6 +205,7 @@
 			// 
 			this.dataColumn_BauteilLieferant.Caption = "Lieferant";
 			this.dataColumn_BauteilLieferant.ColumnName = "Column_BauteilLieferant";
+			this.dataColumn_BauteilLieferant.DataType = typeof(int);
 			// 
 			// dataColumn_Bauteilpreis
 			// 
@@ -371,109 +374,6 @@
 			this.dataGridView1.TabIndex = 18;
 			this.dataGridView1.MouseClick += new System.Windows.Forms.MouseEventHandler(this.datagridview_MouseClick);
 			// 
-			// columnBauteilnameDataGridViewTextBoxColumn
-			// 
-			this.columnBauteilnameDataGridViewTextBoxColumn.DataPropertyName = "Column_Bauteilname";
-			this.columnBauteilnameDataGridViewTextBoxColumn.HeaderText = "Name";
-			this.columnBauteilnameDataGridViewTextBoxColumn.MinimumWidth = 6;
-			this.columnBauteilnameDataGridViewTextBoxColumn.Name = "columnBauteilnameDataGridViewTextBoxColumn";
-			this.columnBauteilnameDataGridViewTextBoxColumn.Width = 125;
-			// 
-			// columnBauteilbeschreibungDataGridViewTextBoxColumn
-			// 
-			this.columnBauteilbeschreibungDataGridViewTextBoxColumn.DataPropertyName = "Column_Bauteilbeschreibung";
-			this.columnBauteilbeschreibungDataGridViewTextBoxColumn.HeaderText = "Beschreibung";
-			this.columnBauteilbeschreibungDataGridViewTextBoxColumn.MinimumWidth = 6;
-			this.columnBauteilbeschreibungDataGridViewTextBoxColumn.Name = "columnBauteilbeschreibungDataGridViewTextBoxColumn";
-			this.columnBauteilbeschreibungDataGridViewTextBoxColumn.Width = 125;
-			// 
-			// columnBauteilbauformDataGridViewTextBoxColumn
-			// 
-			this.columnBauteilbauformDataGridViewTextBoxColumn.DataPropertyName = "Column_Bauteilbauform";
-			this.columnBauteilbauformDataGridViewTextBoxColumn.DataSource = this.bauformbindingSource;
-			this.columnBauteilbauformDataGridViewTextBoxColumn.DisplayMember = "Column_Bauform";
-			this.columnBauteilbauformDataGridViewTextBoxColumn.HeaderText = "Bauform";
-			this.columnBauteilbauformDataGridViewTextBoxColumn.MinimumWidth = 6;
-			this.columnBauteilbauformDataGridViewTextBoxColumn.Name = "columnBauteilbauformDataGridViewTextBoxColumn";
-			this.columnBauteilbauformDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-			this.columnBauteilbauformDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-			this.columnBauteilbauformDataGridViewTextBoxColumn.ValueMember = "Column_Bauformid";
-			this.columnBauteilbauformDataGridViewTextBoxColumn.Width = 125;
-			// 
-			// columnPinbelegungDataGridViewTextBoxColumn1
-			// 
-			this.columnPinbelegungDataGridViewTextBoxColumn1.DataPropertyName = "Column_Pinbelegung";
-			this.columnPinbelegungDataGridViewTextBoxColumn1.HeaderText = "Pinbelegung";
-			this.columnPinbelegungDataGridViewTextBoxColumn1.MinimumWidth = 6;
-			this.columnPinbelegungDataGridViewTextBoxColumn1.Name = "columnPinbelegungDataGridViewTextBoxColumn1";
-			this.columnPinbelegungDataGridViewTextBoxColumn1.Width = 125;
-			// 
-			// columnBauteilherstellerDataGridViewTextBoxColumn
-			// 
-			this.columnBauteilherstellerDataGridViewTextBoxColumn.DataPropertyName = "Column_Bauteilhersteller";
-			this.columnBauteilherstellerDataGridViewTextBoxColumn.DataSource = this.herstellerbindingSource;
-			this.columnBauteilherstellerDataGridViewTextBoxColumn.DisplayMember = "Column_Herstellername";
-			this.columnBauteilherstellerDataGridViewTextBoxColumn.HeaderText = "Hersteller";
-			this.columnBauteilherstellerDataGridViewTextBoxColumn.MinimumWidth = 6;
-			this.columnBauteilherstellerDataGridViewTextBoxColumn.Name = "columnBauteilherstellerDataGridViewTextBoxColumn";
-			this.columnBauteilherstellerDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-			this.columnBauteilherstellerDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-			this.columnBauteilherstellerDataGridViewTextBoxColumn.ValueMember = "Column_Herstellerid";
-			this.columnBauteilherstellerDataGridViewTextBoxColumn.Width = 125;
-			// 
-			// columnBauteildatenblattDataGridViewTextBoxColumn
-			// 
-			this.columnBauteildatenblattDataGridViewTextBoxColumn.DataPropertyName = "Column_Bauteildatenblatt";
-			this.columnBauteildatenblattDataGridViewTextBoxColumn.HeaderText = "Datenblatt";
-			this.columnBauteildatenblattDataGridViewTextBoxColumn.MinimumWidth = 6;
-			this.columnBauteildatenblattDataGridViewTextBoxColumn.Name = "columnBauteildatenblattDataGridViewTextBoxColumn";
-			this.columnBauteildatenblattDataGridViewTextBoxColumn.Width = 125;
-			// 
-			// columnBauteilLieferantDataGridViewTextBoxColumn
-			// 
-			this.columnBauteilLieferantDataGridViewTextBoxColumn.DataPropertyName = "Column_BauteilLieferant";
-			this.columnBauteilLieferantDataGridViewTextBoxColumn.DataSource = this.lieferantbindingSource;
-			this.columnBauteilLieferantDataGridViewTextBoxColumn.DisplayMember = "Column_Lieferantname";
-			this.columnBauteilLieferantDataGridViewTextBoxColumn.HeaderText = "Lieferant";
-			this.columnBauteilLieferantDataGridViewTextBoxColumn.MinimumWidth = 6;
-			this.columnBauteilLieferantDataGridViewTextBoxColumn.Name = "columnBauteilLieferantDataGridViewTextBoxColumn";
-			this.columnBauteilLieferantDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-			this.columnBauteilLieferantDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-			this.columnBauteilLieferantDataGridViewTextBoxColumn.ValueMember = "Column_Lieferantid";
-			this.columnBauteilLieferantDataGridViewTextBoxColumn.Width = 125;
-			// 
-			// columnBestellnummerDataGridViewTextBoxColumn
-			// 
-			this.columnBestellnummerDataGridViewTextBoxColumn.DataPropertyName = "Column_Bestellnummer";
-			this.columnBestellnummerDataGridViewTextBoxColumn.HeaderText = "Bestellnummer";
-			this.columnBestellnummerDataGridViewTextBoxColumn.MinimumWidth = 6;
-			this.columnBestellnummerDataGridViewTextBoxColumn.Name = "columnBestellnummerDataGridViewTextBoxColumn";
-			this.columnBestellnummerDataGridViewTextBoxColumn.Width = 125;
-			// 
-			// columnBauteilstückzahlDataGridViewTextBoxColumn
-			// 
-			this.columnBauteilstückzahlDataGridViewTextBoxColumn.DataPropertyName = "Column_Bauteilstückzahl";
-			this.columnBauteilstückzahlDataGridViewTextBoxColumn.HeaderText = "Stückzahl";
-			this.columnBauteilstückzahlDataGridViewTextBoxColumn.MinimumWidth = 6;
-			this.columnBauteilstückzahlDataGridViewTextBoxColumn.Name = "columnBauteilstückzahlDataGridViewTextBoxColumn";
-			this.columnBauteilstückzahlDataGridViewTextBoxColumn.Width = 125;
-			// 
-			// columnBauteilpreisDataGridViewTextBoxColumn
-			// 
-			this.columnBauteilpreisDataGridViewTextBoxColumn.DataPropertyName = "Column_Bauteilpreis";
-			this.columnBauteilpreisDataGridViewTextBoxColumn.HeaderText = "Preis";
-			this.columnBauteilpreisDataGridViewTextBoxColumn.MinimumWidth = 6;
-			this.columnBauteilpreisDataGridViewTextBoxColumn.Name = "columnBauteilpreisDataGridViewTextBoxColumn";
-			this.columnBauteilpreisDataGridViewTextBoxColumn.Width = 125;
-			// 
-			// columnIdDataGridViewTextBoxColumn
-			// 
-			this.columnIdDataGridViewTextBoxColumn.DataPropertyName = "Column_Id";
-			this.columnIdDataGridViewTextBoxColumn.HeaderText = "Id";
-			this.columnIdDataGridViewTextBoxColumn.MinimumWidth = 6;
-			this.columnIdDataGridViewTextBoxColumn.Name = "columnIdDataGridViewTextBoxColumn";
-			this.columnIdDataGridViewTextBoxColumn.Width = 125;
-			// 
 			// dataGridView4
 			// 
 			this.dataGridView4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -624,6 +524,109 @@
 			this.button_search.Text = "Search";
 			this.button_search.UseVisualStyleBackColor = true;
 			// 
+			// columnBauteilnameDataGridViewTextBoxColumn
+			// 
+			this.columnBauteilnameDataGridViewTextBoxColumn.DataPropertyName = "Column_Bauteilname";
+			this.columnBauteilnameDataGridViewTextBoxColumn.HeaderText = "Name";
+			this.columnBauteilnameDataGridViewTextBoxColumn.MinimumWidth = 6;
+			this.columnBauteilnameDataGridViewTextBoxColumn.Name = "columnBauteilnameDataGridViewTextBoxColumn";
+			this.columnBauteilnameDataGridViewTextBoxColumn.Width = 125;
+			// 
+			// columnBauteilbeschreibungDataGridViewTextBoxColumn
+			// 
+			this.columnBauteilbeschreibungDataGridViewTextBoxColumn.DataPropertyName = "Column_Bauteilbeschreibung";
+			this.columnBauteilbeschreibungDataGridViewTextBoxColumn.HeaderText = "Beschreibung";
+			this.columnBauteilbeschreibungDataGridViewTextBoxColumn.MinimumWidth = 6;
+			this.columnBauteilbeschreibungDataGridViewTextBoxColumn.Name = "columnBauteilbeschreibungDataGridViewTextBoxColumn";
+			this.columnBauteilbeschreibungDataGridViewTextBoxColumn.Width = 125;
+			// 
+			// columnBauteilbauformDataGridViewTextBoxColumn
+			// 
+			this.columnBauteilbauformDataGridViewTextBoxColumn.DataPropertyName = "Column_Bauteilbauform";
+			this.columnBauteilbauformDataGridViewTextBoxColumn.DataSource = this.bauformbindingSource;
+			this.columnBauteilbauformDataGridViewTextBoxColumn.DisplayMember = "Column_Bauform";
+			this.columnBauteilbauformDataGridViewTextBoxColumn.HeaderText = "Bauform";
+			this.columnBauteilbauformDataGridViewTextBoxColumn.MinimumWidth = 6;
+			this.columnBauteilbauformDataGridViewTextBoxColumn.Name = "columnBauteilbauformDataGridViewTextBoxColumn";
+			this.columnBauteilbauformDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+			this.columnBauteilbauformDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+			this.columnBauteilbauformDataGridViewTextBoxColumn.ValueMember = "Column_Bauformid";
+			this.columnBauteilbauformDataGridViewTextBoxColumn.Width = 125;
+			// 
+			// columnPinbelegungDataGridViewTextBoxColumn1
+			// 
+			this.columnPinbelegungDataGridViewTextBoxColumn1.DataPropertyName = "Column_Pinbelegung";
+			this.columnPinbelegungDataGridViewTextBoxColumn1.HeaderText = "Pinbelegung";
+			this.columnPinbelegungDataGridViewTextBoxColumn1.MinimumWidth = 6;
+			this.columnPinbelegungDataGridViewTextBoxColumn1.Name = "columnPinbelegungDataGridViewTextBoxColumn1";
+			this.columnPinbelegungDataGridViewTextBoxColumn1.Width = 125;
+			// 
+			// columnBauteilherstellerDataGridViewTextBoxColumn
+			// 
+			this.columnBauteilherstellerDataGridViewTextBoxColumn.DataPropertyName = "Column_Bauteilhersteller";
+			this.columnBauteilherstellerDataGridViewTextBoxColumn.DataSource = this.herstellerbindingSource;
+			this.columnBauteilherstellerDataGridViewTextBoxColumn.DisplayMember = "Column_Herstellername";
+			this.columnBauteilherstellerDataGridViewTextBoxColumn.HeaderText = "Hersteller";
+			this.columnBauteilherstellerDataGridViewTextBoxColumn.MinimumWidth = 6;
+			this.columnBauteilherstellerDataGridViewTextBoxColumn.Name = "columnBauteilherstellerDataGridViewTextBoxColumn";
+			this.columnBauteilherstellerDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+			this.columnBauteilherstellerDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+			this.columnBauteilherstellerDataGridViewTextBoxColumn.ValueMember = "Column_Herstellerid";
+			this.columnBauteilherstellerDataGridViewTextBoxColumn.Width = 125;
+			// 
+			// columnBauteildatenblattDataGridViewTextBoxColumn
+			// 
+			this.columnBauteildatenblattDataGridViewTextBoxColumn.DataPropertyName = "Column_Bauteildatenblatt";
+			this.columnBauteildatenblattDataGridViewTextBoxColumn.HeaderText = "Datenblatt";
+			this.columnBauteildatenblattDataGridViewTextBoxColumn.MinimumWidth = 6;
+			this.columnBauteildatenblattDataGridViewTextBoxColumn.Name = "columnBauteildatenblattDataGridViewTextBoxColumn";
+			this.columnBauteildatenblattDataGridViewTextBoxColumn.Width = 125;
+			// 
+			// columnBauteilLieferantDataGridViewTextBoxColumn
+			// 
+			this.columnBauteilLieferantDataGridViewTextBoxColumn.DataPropertyName = "Column_BauteilLieferant";
+			this.columnBauteilLieferantDataGridViewTextBoxColumn.DataSource = this.lieferantbindingSource;
+			this.columnBauteilLieferantDataGridViewTextBoxColumn.DisplayMember = "Column_Lieferantname";
+			this.columnBauteilLieferantDataGridViewTextBoxColumn.HeaderText = "Lieferant";
+			this.columnBauteilLieferantDataGridViewTextBoxColumn.MinimumWidth = 6;
+			this.columnBauteilLieferantDataGridViewTextBoxColumn.Name = "columnBauteilLieferantDataGridViewTextBoxColumn";
+			this.columnBauteilLieferantDataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+			this.columnBauteilLieferantDataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+			this.columnBauteilLieferantDataGridViewTextBoxColumn.ValueMember = "Column_Lieferantid";
+			this.columnBauteilLieferantDataGridViewTextBoxColumn.Width = 125;
+			// 
+			// columnBestellnummerDataGridViewTextBoxColumn
+			// 
+			this.columnBestellnummerDataGridViewTextBoxColumn.DataPropertyName = "Column_Bestellnummer";
+			this.columnBestellnummerDataGridViewTextBoxColumn.HeaderText = "Bestellnummer";
+			this.columnBestellnummerDataGridViewTextBoxColumn.MinimumWidth = 6;
+			this.columnBestellnummerDataGridViewTextBoxColumn.Name = "columnBestellnummerDataGridViewTextBoxColumn";
+			this.columnBestellnummerDataGridViewTextBoxColumn.Width = 125;
+			// 
+			// columnBauteilstückzahlDataGridViewTextBoxColumn
+			// 
+			this.columnBauteilstückzahlDataGridViewTextBoxColumn.DataPropertyName = "Column_Bauteilstückzahl";
+			this.columnBauteilstückzahlDataGridViewTextBoxColumn.HeaderText = "Stückzahl";
+			this.columnBauteilstückzahlDataGridViewTextBoxColumn.MinimumWidth = 6;
+			this.columnBauteilstückzahlDataGridViewTextBoxColumn.Name = "columnBauteilstückzahlDataGridViewTextBoxColumn";
+			this.columnBauteilstückzahlDataGridViewTextBoxColumn.Width = 125;
+			// 
+			// columnBauteilpreisDataGridViewTextBoxColumn
+			// 
+			this.columnBauteilpreisDataGridViewTextBoxColumn.DataPropertyName = "Column_Bauteilpreis";
+			this.columnBauteilpreisDataGridViewTextBoxColumn.HeaderText = "Preis";
+			this.columnBauteilpreisDataGridViewTextBoxColumn.MinimumWidth = 6;
+			this.columnBauteilpreisDataGridViewTextBoxColumn.Name = "columnBauteilpreisDataGridViewTextBoxColumn";
+			this.columnBauteilpreisDataGridViewTextBoxColumn.Width = 125;
+			// 
+			// columnIdDataGridViewTextBoxColumn
+			// 
+			this.columnIdDataGridViewTextBoxColumn.DataPropertyName = "Column_Id";
+			this.columnIdDataGridViewTextBoxColumn.HeaderText = "Id";
+			this.columnIdDataGridViewTextBoxColumn.MinimumWidth = 6;
+			this.columnIdDataGridViewTextBoxColumn.Name = "columnIdDataGridViewTextBoxColumn";
+			this.columnIdDataGridViewTextBoxColumn.Width = 125;
+			// 
 			// mainForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -668,7 +671,6 @@
 		#endregion
 		private System.Windows.Forms.Button button_minimize;
 		private System.Windows.Forms.Button button_exit;
-		private System.Data.DataSet dataSet1;
 		private System.Data.DataTable dataTable_bauteile;
 		private System.Data.DataColumn dataColumn_Bauteilname;
 		private System.Data.DataColumn dataColumn_Bauteilbeschreibung;
@@ -709,6 +711,8 @@
 		private System.Data.DataColumn dataColumn_Pinbelegung;
 		private System.Windows.Forms.Button button_add;
 		private System.Windows.Forms.Button button_search;
+		private System.Windows.Forms.BindingSource bauteileBindingSource;
+		private System.Data.DataSet dataSet1;
 		private System.Windows.Forms.DataGridViewTextBoxColumn columnBauteilnameDataGridViewTextBoxColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn columnBauteilbeschreibungDataGridViewTextBoxColumn;
 		private System.Windows.Forms.DataGridViewComboBoxColumn columnBauteilbauformDataGridViewTextBoxColumn;
@@ -720,10 +724,9 @@
 		private System.Windows.Forms.DataGridViewTextBoxColumn columnBauteilstückzahlDataGridViewTextBoxColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn columnBauteilpreisDataGridViewTextBoxColumn;
 		private System.Windows.Forms.DataGridViewTextBoxColumn columnIdDataGridViewTextBoxColumn;
-		private System.Windows.Forms.BindingSource bauteileBindingSource;
-		public System.Windows.Forms.BindingSource herstellerbindingSource;
-		public System.Windows.Forms.BindingSource lieferantbindingSource;
-		public System.Windows.Forms.BindingSource bauformbindingSource;
+		private System.Windows.Forms.BindingSource herstellerbindingSource;
+		private System.Windows.Forms.BindingSource lieferantbindingSource;
+		private System.Windows.Forms.BindingSource bauformbindingSource;
 	}
 }
 

@@ -12,55 +12,14 @@ namespace Bauteildatenbank
 {
 	public partial class FormAddEditDialog : Form
 	{
-		// Eigenschaften (hier probiere ich noch rum ...)
-		public string BauteilName {
-			get => textBox_name.Text;
-			set => textBox_name.Text = value;
-		}
-		public string Beschreibung { 
-			get => textBox_beschreibung.Text;
-			set => textBox_beschreibung.Text = value;
-		}
-		public string Stückzahl {
-			get => textBox_stückzahl.Text;
-			set => textBox_stückzahl.Text = value;
-		}
-		public object BauformDs { 
-			get => comboBox_bauform.DataSource;
-			set => comboBox_bauform.DataSource = value;
-		}
-		public object HerstellerDs { 
-			get => comboBox_hersteller.DataSource;
-			set => comboBox_hersteller.DataSource = value;
-		}
-		public string Datenblatt { 
-			get => textBox_datenblatt.Text;
-			set => textBox_datenblatt.Text = value;
-		}
-		public object LieferantDs { 
-			get => comboBox_lieferant.DataSource;
-			set => comboBox_lieferant.DataSource = value;
-		}
-		public string Preis {
-			get => textBox_preis.Text;
-			set => textBox_preis.Text = value;
-		}
-		public string Bestellnummer { 
-			get => textBox_bestellnummer.Text;
-			set => textBox_bestellnummer.Text = value;
-		}
-		public string Pinbelegung { 
-			get => textBox_pinbelegung.Text;
-			set => textBox_pinbelegung.Text = value;
-		}
+		public DataSet DataSetBuffer { get; set; }
 
 		public FormAddEditDialog()
 		{
 			InitializeComponent();
-			//application_style_Init(); // daran wird auch noch gearbeitet.
-
 			this.button_OK.DialogResult = DialogResult.OK;
 			this.button_Abbrechen.DialogResult = DialogResult.Cancel;
+			//application_style_Init(); // daran wird auch noch gearbeitet.
 		}
 
 		private void application_style_Init()
@@ -75,6 +34,28 @@ namespace Bauteildatenbank
 			this.FormBorderStyle = 0; // None
 			this.StartPosition = FormStartPosition.CenterScreen;
 			this.Text = "Add/Edit Bauteil";
+		}
+
+		public void fillFromDataSet()
+		{
+			bauformbindingSource.DataSource = DataSetBuffer;
+			bauformbindingSource.DataMember = "Bauform";
+			comboBox_bauform.DataSource = bauformbindingSource;
+			comboBox_bauform.DisplayMember = "Column_Bauform";
+
+			herstellerbindingSource.DataSource = DataSetBuffer;
+			herstellerbindingSource.DataMember = "Hersteller";
+			comboBox_hersteller.DataSource = herstellerbindingSource;
+			comboBox_hersteller.DisplayMember = "Column_Herstellername";
+
+			lieferantbindingSource.DataSource = DataSetBuffer;
+			lieferantbindingSource.DataMember = "Lieferant";
+			comboBox_lieferant.DataSource = lieferantbindingSource;
+			comboBox_lieferant.DisplayMember = "Column_Lieferantname";
+
+			bauteileBindingSource.DataSource = DataSetBuffer;
+			bauteileBindingSource.DataMember = "Bauteile";
+			// für den aktuellen Datensatz.
 		}
 
 	}
